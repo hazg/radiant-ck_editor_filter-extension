@@ -95,7 +95,8 @@ function putInEditor(partIndex){
 InsertIntoCk = Behavior.create({
   onclick: function(e) {
     if (e) e.stop();
-    var part_name = TabControlBehavior.instances[0].controller.selected.caption;
+    var part_name = TabControlBehavior.instances[0].controller.selected.page.id.match(/^page_(.*)$/)[1];
+
     var textbox = $('part_' + part_name + '_content');
 
     var tag_parts = this.element.getAttribute('rel').split('_');
