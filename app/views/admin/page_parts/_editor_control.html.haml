@@ -1,6 +1,6 @@
 :javascript
   Event.observe(window,'load',function(){ 
-    instantiateCkEditor('#{page_part.name.to_slug}')
-    Event.addBehavior({ 'a.insert_asset': InsertIntoCk })
+    instantiateCkEditor("#{page_part.name.to_slug}");
+    Event.addBehavior({ 'a.insert_asset': InsertIntoCk });
   })
-  Event.observe($('part_#{page_part.name.to_slug}_filter_id'),'change',function(){ toggleEditor('#{page_part.name.downcase}') })
+  Event.observe($('part_' + "#{page_part.name.to_slug}" + '_filter_id'),'change',function(){ toggleEditor("#{page_part.name.to_slug}") });
